@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baby Shower Edson & Mary</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./babyedsonmary.png" type="image/png">
+
+    <!-- Open Graph (WhatsApp / Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proyectorenasermx-rgb.github.io/BabyShower/">
+    <meta property="og:title" content="Baby Shower Edson & Mary">
+    <meta property="og:description" content="Acompáñanos a celebrar la llegada de nuestro bebé 👶🎉">
+    <meta property="og:image" content="https://proyectorenasermx-rgb.github.io/BabyShower/Babyedsonmary4.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter (opcional, pero correcto) -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- =====================
+     AUDIO
+===================== -->
+<audio id="musica" loop>
+    <source src="bobmarleybaby.mp3" type="audio/mpeg">
+</audio>
+
+<!-- =====================
+     BOTÓN MÚSICA
+===================== -->
+<div id="btnMusica" class="btn-float musica pulse">
+    🎵
+</div>
+
+<!-- =====================
+     CONTENEDOR
+===================== -->
+<div class="container">
+
+    <h1>👶 Baby Shower 👶</h1>
+    <p>Te invitamos a celebrar la llegada de nuestro bebé</p>
+
+    <h3>📅 15 de Julio 2026 | ⏰ 4:00 PM</h3>
+
+    <!-- =====================
+         CONTADOR
+    ===================== -->
+    <div id="contador">
+        <div><span id="dias">0</span><br>Días</div>
+        <div><span id="horas">0</span><br>Horas</div>
+        <div><span id="minutos">0</span><br>Min</div>
+        <div><span id="segundos">0</span><br>Seg</div>
+    </div>
+
+    <!-- =====================
+         MAPA
+    ===================== -->
+    <h3>📍 Ubicación</h3>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d861.2235!2d-99.0222272!3d19.3945985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fdba5a8e6fbb%3A0xce4dfeb8b07a54b6!2sNavaCasa!5e0!3m2!1ses!2smx!4v1700000000000"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+
+    <!-- =====================
+         REGALOS
+    ===================== -->
+    <h3>🎁 Lista de Regalos</h3>
+    <ul class="regalos">
+        <li>🍼 Pañales</li>
+        <li>👕 Ropa 0-6 meses</li>
+        <li>🧴 Artículos de higiene</li>
+        <li>🛏️ Cobijitas</li>
+        <li>🧸 Juguetes</li>
+    </ul>
+
+    <!-- =====================
+         BOTÓN FORMULARIO
+    ===================== -->
+    <button id="btnFormulario" class="btn-principal pulse">
+        Confirmar asistencia
+    </button>
+
+    <!-- =====================
+         FORMULARIO
+    ===================== -->
+    <form id="formulario" class="formulario oculto">
+
+        <input id="nombre" type="text" placeholder="Nombre completo" required>
+        <input id="telefono" type="tel" placeholder="Teléfono" required>
+
+        <h4>¿Asistirás?</h4>
+        <div class="asistencia">
+            <button type="button" class="btn-asistencia" data-valor="SI">Sí</button>
+            <button type="button" class="btn-asistencia" data-valor="NO">No</button>
+        </div>
+
+        <button type="submit" class="btn-principal btn-grande pulse">
+            ENVIAR CONFIRMACIÓN
+        </button>
+    </form>
+
+</div>
+
+<!-- =====================
+     WHATSAPP
+===================== -->
+<a href="https://wa.me/525614454159/?text=%C2%A1Hola%21%0A%0ALes%20escribo%20por%20el%20Baby%20Shower"
+   class="btn-float whatsapp"
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
