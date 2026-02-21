@@ -1,0 +1,67 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 158, 232, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--blanco);
+  color: var(--rosa-principal);
+}
+
+/* Botón hamburguesa */
+#menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--blanco);
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 60px 0 20px;
+    background: rgba(255, 158, 232, 0.9);
+  }
+
+  nav ul.mostrar {
+    display: flex;
+  }
+}

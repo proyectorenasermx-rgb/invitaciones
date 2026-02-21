@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regalos · Mariana</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/regalos.css">
+  <link rel="stylesheet" href="../css/music.css">
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="itinerario.html">Itinerario</a></li>
+    <li><a href="transporte.html">Transporte</a></li>
+    <li><a href="recomendaciones.html">Recomendaciones</a></li>
+    <li><a href="regalos.html">Regalos</a></li>
+    <li><a href="rsvp.html">RSVP</a></li>
+  </ul>
+</nav>
+
+<section class="fade">
+  <h1>🎁 Mesa de regalos</h1>
+  <p>Lo más importante es que vengas, pero si quieres detallar...</p>
+  
+  <div class="card" style="text-align: center;">
+    <p style="font-size: 1.3rem;">💝 <em>"Tu presencia es mi regalo, pero tu detalle será bien recibido"</em></p>
+  </div>
+  
+  <!-- Opciones de regalo -->
+  <div class="opciones-regalos">
+    <button class="btn-regalo" onclick="seleccionar('Dinero')">💰 Dinero</button>
+    <button class="btn-regalo" onclick="seleccionar('Ropa y accesorios')">👗 Ropa y accesorios</button>
+    <button class="btn-regalo" onclick="seleccionar('Comida')">🍰 Comida</button>
+    <button class="btn-regalo" onclick="seleccionar('Viajes')">✈️ Viajes</button>
+    <button class="btn-regalo" onclick="seleccionar('Otro')">🎀 Otro</button>
+  </div>
+  
+  <!-- Inputs ocultos hasta seleccionar -->
+  <input type="hidden" id="opcion">
+  <input type="text" id="detalle" placeholder="¿Qué te gustaría regalarme? Cuéntame..." style="display:none;">
+  
+  <button class="btn-enviar" onclick="enviarRegalo()">✨ Enviar mi deseo</button>
+  
+  <!-- Transferencia (opcional) -->
+  <div class="card" style="margin-top: 40px;">
+    <h3>💳 Transferencia</h3>
+    <p>Si prefieres regalo en efectivo:</p>
+    <p><strong>Banco:</strong> BBVA</p>
+    <p><strong>Cuenta:</strong> 1234 5678 90</p>
+    <p><strong>CLABE:</strong> 012 345 678901234567</p>
+    <p style="font-size: 0.9rem;">(Manda comprobante para abrazarte más fuerte)</p>
+  </div>
+</section>
+
+<audio id="musica" loop>
+  <source src="../assets/musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-controls">
+  <button id="toggle-music">🎵 Música</button>
+  <button id="volume-up">🔊+</button>
+  <button id="volume-down">🔉-</button>
+</div>
+
+<script src="../js/menu.js"></script>
+<script src="../js/animaciones.js"></script>
+<script src="../js/regalos.js"></script>
+<script src="../js/music.js"></script>
+</body>
+</html>

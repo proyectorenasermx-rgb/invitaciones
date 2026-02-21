@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recomendaciones · Mariana</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/music.css">
+  <style>
+    .categoria {
+      margin: 40px 0;
+    }
+    
+    .categoria h2 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    
+    .grid-recomendaciones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .recomendacion-card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .recomendacion-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .recomendacion-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    
+    .recomendacion-card p {
+      text-align: left;
+      margin: 8px 0;
+    }
+    
+    .recomendacion-card .precio {
+      color: #FFE0F7;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="itinerario.html">Itinerario</a></li>
+    <li><a href="transporte.html">Transporte</a></li>
+    <li><a href="recomendaciones.html">Recomendaciones</a></li>
+    <li><a href="regalos.html">Regalos</a></li>
+    <li><a href="rsvp.html">RSVP</a></li>
+  </ul>
+</nav>
+
+<section class="fade">
+  <h1>🌟 Recomendaciones</h1>
+  <p>Si vienes de fuera o quieres quedarte, aquí hay opciones</p>
+  
+  <!-- HOTELES -->
+  <div class="categoria fade">
+    <h2>🏨 Hoteles cercanos</h2>
+    <div class="grid-recomendaciones">
+      <div class="recomendacion-card">
+        <h3>City Express Ixtapaluca</h3>
+        <p>📍 A 5 min del evento</p>
+        <p>🛏️ Habitación doble $1,200/noche</p>
+        <p class="precio">¡Incluye desayuno!</p>
+      </div>
+      
+      <div class="recomendacion-card">
+        <h3>Hotel Real Ixtapaluca</h3>
+        <p>📍 A 10 min en auto</p>
+        <p>🛏️ Habitación sencilla $850/noche</p>
+        <p class="precio">Económico y cómodo</p>
+      </div>
+      
+      <div class="recomendacion-card">
+        <h3>Fiesta Inn Plazas Outlet</h3>
+        <p>📍 A 15 min del evento</p>
+        <p>🛏️ Habitación suite $1,800/noche</p>
+        <p class="precio">Para consentirte</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- PLAZAS -->
+  <div class="categoria fade">
+    <h2>🛍️ Plazas comerciales</h2>
+    <div class="grid-recomendaciones">
+      <div class="recomendacion-card">
+        <h3>Galerías Ixtapaluca</h3>
+        <p>📍 ¡Ahí es el evento!</p>
+        <p>🛒 Tiendas, cine, comida</p>
+        <p>⏰ 11am - 9pm</p>
+      </div>
+      
+      <div class="recomendacion-card">
+        <h3>Plaza Sendero Ixtapaluca</h3>
+        <p>📍 A 7 min del evento</p>
+        <p>🛒 Walmart, Liverpool, tiendas</p>
+        <p>🍔 Zona de comida amplia</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- PARQUES -->
+  <div class="categoria fade">
+    <h2>🌳 Parques y naturaleza</h2>
+    <div class="grid-recomendaciones">
+      <div class="recomendacion-card">
+        <h3>Parque Ecológico</h3>
+        <p>📍 Ixtapaluca centro</p>
+        <p>🌿 Área verde, juegos, lago</p>
+        <p>✨ Ideal para fotos</p>
+      </div>
+      
+      <div class="recomendacion-card">
+        <h3>Los Héroes</h3>
+        <p>📍 Fraccionamiento cercano</p>
+        <p>🚶‍♀️ Andadores y áreas verdes</p>
+        <p>☕ Cafeterías cerca</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CÓDIGO DE VESTIMENTA -->
+  <div class="card fade" style="text-align: center; margin-top: 40px;">
+    <h2>👗 Código de vestimenta</h2>
+    <p>✨ <strong>Formal pero cómodo</strong> (vamos a bailar)</p>
+    <p>🌸 Colores pastel, rosas, morados</p>
+    <p>👠 Zapatos para pista de baile</p>
+    <p>💄 ¡Y mucha actitud!</p>
+  </div>
+</section>
+
+<audio id="musica" loop>
+  <source src="../assets/musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-controls">
+  <button id="toggle-music">🎵 Música</button>
+  <button id="volume-up">🔊+</button>
+  <button id="volume-down">🔉-</button>
+</div>
+
+<script src="../js/menu.js"></script>
+<script src="../js/animaciones.js"></script>
+<script src="../js/music.js"></script>
+</body>
+</html>

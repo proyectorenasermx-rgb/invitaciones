@@ -1,0 +1,56 @@
+.opciones-regalos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.btn-regalo {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid var(--blanco);
+  padding: 15px 25px;
+  border-radius: 50px;
+  color: var(--blanco);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-regalo:hover {
+  background: var(--blanco);
+  color: var(--rosa-principal);
+  transform: scale(1.05);
+}
+
+#detalle {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  display: block;
+}
+
+.btn-enviar {
+  background: var(--blanco);
+  color: var(--rosa-principal);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 20px auto;
+}
+
+.btn-enviar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+}

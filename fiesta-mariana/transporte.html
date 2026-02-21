@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transporte · Mariana</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/music.css">
+  <style>
+    .transporte-opcion {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .transporte-opcion:hover {
+      transform: translateX(10px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .transporte-opcion h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .transporte-opcion p {
+      text-align: left;
+      margin: 10px 0;
+    }
+    
+    .btn-mapa {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      border: 1px solid white;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-mapa:hover {
+      background: white;
+      color: #FF9EE8;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="itinerario.html">Itinerario</a></li>
+    <li><a href="transporte.html">Transporte</a></li>
+    <li><a href="recomendaciones.html">Recomendaciones</a></li>
+    <li><a href="regalos.html">Regalos</a></li>
+    <li><a href="rsvp.html">RSVP</a></li>
+  </ul>
+</nav>
+
+<section class="fade">
+  <h1>🚗 Cómo llegar</h1>
+  <p>Opciones para que llegues segura y a tiempo</p>
+  
+  <div class="transporte-opcion fade">
+    <h3>🚌 Transporte público</h3>
+    <p><strong>Ruta:</strong> Metro Pantitlán → Autobús Ixtapaluca (30 min)</p>
+    <p><strong>Parada:</strong> Frente a Galerías Ixtapaluca</p>
+    <p><strong>Costo aprox:</strong> $15 pesos</p>
+    <a href="https://maps.app.goo.gl/..." class="btn-mapa">Ver ruta</a>
+  </div>
+  
+  <div class="transporte-opcion fade">
+    <h3>🚖 Taxi / Uber</h3>
+    <p><strong>Tiempo:</strong> 45 min desde el centro de CDMX</p>
+    <p><strong>Costo aprox:</strong> $250 - $350 pesos</p>
+    <p><strong>Punto de reunión:</strong> Podemos coordinar viajes compartidos</p>
+  </div>
+  
+  <div class="transporte-opcion fade">
+    <h3>🚗 Auto particular</h3>
+    <p><strong>Dirección:</strong> Galerías Ixtapaluca, Estado de México</p>
+    <p><strong>Estacionamiento:</strong> Gratuito en la plaza</p>
+    <a href="https://maps.app.goo.gl/..." class="btn-mapa">Abrir en Google Maps</a>
+  </div>
+  
+  <div class="card" style="text-align: center; margin-top: 40px;">
+    <p>✨ ¿Necesitas aventón?</p>
+    <p>Mándame mensaje y vemos cómo te ayudo a llegar</p>
+    <button class="btn" onclick="window.location.href='rsvp.html'">Confirmar asistencia</button>
+  </div>
+</section>
+
+<audio id="musica" loop>
+  <source src="../assets/musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-controls">
+  <button id="toggle-music">🎵 Música</button>
+  <button id="volume-up">🔊+</button>
+  <button id="volume-down">🔉-</button>
+</div>
+
+<script src="../js/menu.js"></script>
+<script src="../js/animaciones.js"></script>
+<script src="../js/music.js"></script>
+</body>
+</html>
