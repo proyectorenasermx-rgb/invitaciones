@@ -368,3 +368,33 @@ input:focus, textarea:focus {
     font-size: 0.9rem;
   }
 }
+/* ===== SOLUCIÓN PARA PÁGINA EN BLANCO EN MÓVIL ===== */
+@media (max-width: 768px) {
+  section {
+    padding-top: 80px !important;  /* Forzar espacio para el menú */
+    min-height: 100vh;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 1;
+  }
+  
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: block;
+  }
+  
+  /* Asegurar que el contenido sea visible */
+  .card, .itinerario-card, .recomendacion-card, .fade {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+  
+  /* El menú no debe tapar el contenido cuando está cerrado */
+  nav ul:not(.mostrar) {
+    display: none !important;
+  }
+}
