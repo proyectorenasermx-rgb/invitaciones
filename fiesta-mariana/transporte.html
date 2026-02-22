@@ -8,63 +8,68 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/music.css">
   <style>
-    .transporte-opcion {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 25px;
-      margin: 20px 0;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      transition: all 0.3s ease;
-    }
-    
-    .transporte-opcion:hover {
-      transform: translateX(10px);
-      background: rgba(255, 255, 255, 0.25);
-    }
-    
-    .transporte-opcion h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .transporte-opcion p {
-      text-align: left;
-      margin: 10px 0;
-    }
-    
-    .btn-mapa {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 8px 20px;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 30px;
-      color: white;
-      text-decoration: none;
-      border: 1px solid white;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-mapa:hover {
-      background: white;
-      color: #FF9EE8;
-    }
-  </style>
+  .transporte-opcion {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px auto;        /* 👈 CENTRADO HORIZONTAL */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    max-width: 900px;          /* 👈 MISMO ANCHO QUE LAS DEMÁS TARJETAS */
+  }
+  
+  .transporte-opcion:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .transporte-opcion h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .transporte-opcion p {
+    text-align: left;
+    margin: 10px 0;
+  }
+  
+  .btn-mapa {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-mapa:hover {
+    background: white;
+    color: #FF9EE8;
+  }
+</style>
 </head>
 <body>
 
 <nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="itinerario.html">Itinerario</a></li>
-    <li><a href="transporte.html">Transporte</a></li>
-    <li><a href="recomendaciones.html">Recomendaciones</a></li>
-    <li><a href="regalos.html">Regalos</a></li>
-    <li><a href="rsvp.html">RSVP</a></li>
-  </ul>
+  <div class="nav-container">
+    <span class="nav-logo">Mariana ✨</span>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menú">☀️</button>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="itinerario.html">Itinerario</a></li>
+      <li><a href="transporte.html">Transporte</a></li>
+      <li><a href="recomendaciones.html">Recomendaciones</a></li>
+      <li><a href="regalos.html">Regalos</a></li>
+      <li><a href="rsvp.html">RSVP</a></li>
+    </ul>
+  </div>
 </nav>
 
 <section class="fade">
@@ -114,5 +119,4 @@
 <script src="js/animaciones.js"></script>
 <script src="js/music.js"></script>
 </body>
-
 </html>
