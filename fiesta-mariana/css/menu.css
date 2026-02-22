@@ -1,67 +1,270 @@
+/* ===== MENÚ ELEGANTE - VERSIÓN CORREGIDA ===== */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 158, 232, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(171, 153, 250, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
-  padding: 10px 0;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-nav ul {
-  list-style: none;
+.nav-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0 20px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
-nav a {
-  color: var(--blanco);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 5px 10px;
-  border-radius: 20px;
+/* Logo con estilo */
+.nav-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: white;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+  margin-right: 40px;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 
-nav a:hover {
-  background: var(--blanco);
-  color: var(--rosa-principal);
+.nav-logo:hover {
+  text-shadow: 0 0 20px #FFB3E6, 0 0 30px #AB99FA;
 }
 
-/* Botón hamburguesa */
-#menu-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  color: var(--blanco);
-  font-size: 2rem;
-  cursor: pointer;
+/* Lista del menú */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+/* Items del menú */
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  display: block;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+/* Efecto hover elegante */
+nav ul li a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(171, 153, 250, 0.4);
+}
+
+/* Efecto de brillo */
+nav ul li a::after {
+  content: '';
   position: absolute;
-  right: 20px;
-  top: 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FFB3E6, #AB99FA);
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
+nav ul li a:hover::after {
+  width: 70%;
+}
+
+/* Página activa */
+nav ul li a.activo {
+  background: linear-gradient(135deg, rgba(255, 179, 230, 0.2), rgba(171, 153, 250, 0.2));
+  color: white;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a.activo::after {
+  width: 70%;
+  background: white;
+}
+
+/* Separador decorativo entre items */
+nav ul li:not(:last-child)::after {
+  content: '🌸';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  opacity: 0.5;
+  color: #FFB3E6;
+  pointer-events: none;
+}
+
+/* ===== BOTÓN HAMBURGUESA CORREGIDO - CENTRADO PERFECTO ===== */
+.menu-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;  /* Cambiado a 50% para círculo perfecto */
+  width: 45px;
+  height: 45px;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+  backdrop-filter: blur(5px);
+  
+  /* CENTRADO PERFECTO CON FLEXBOX */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.menu-toggle:hover {
+  background: white;
+  color: #AB99FA;
+  transform: scale(1.1);
+  border-color: white;
+}
+
+/* ===== VERSIÓN MÓVIL CORREGIDA ===== */
 @media (max-width: 768px) {
-  #menu-toggle {
-    display: block;
+  nav {
+    padding: 10px 15px;
   }
 
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 1.5rem;
+    margin-right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;  /* Mostrar en móvil */
+  }
+
+  /* Menú móvil - CORREGIDO para no dejar página en blanco */
   nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
+    position: fixed;
+    top: 60px;
+    left: 0;
     width: 100%;
-    text-align: center;
-    padding: 60px 0 20px;
-    background: rgba(255, 158, 232, 0.9);
+    background: linear-gradient(135deg, rgba(171, 153, 250, 0.98), rgba(255, 179, 230, 0.98)); /* Más opaco */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    z-index: 999;  /* Asegurar que esté sobre el contenido */
+    pointer-events: none;  /* Evitar clicks cuando está oculto */
   }
 
   nav ul.mostrar {
-    display: flex;
+    max-height: 400px;
+    opacity: 1;
+    padding: 15px 0;
+    pointer-events: all;  /* Permitir clicks cuando está visible */
   }
+
+  nav ul li {
+    width: 90%;
+    margin: 3px 0;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+  }
+
+  nav ul.mostrar li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Animación escalonada */
+  nav ul.mostrar li:nth-child(1) { transition-delay: 0.05s; }
+  nav ul.mostrar li:nth-child(2) { transition-delay: 0.1s; }
+  nav ul.mostrar li:nth-child(3) { transition-delay: 0.15s; }
+  nav ul.mostrar li:nth-child(4) { transition-delay: 0.2s; }
+  nav ul.mostrar li:nth-child(5) { transition-delay: 0.25s; }
+  nav ul.mostrar li:nth-child(6) { transition-delay: 0.3s; }
+
+  nav ul li a {
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.02);
+  }
+
+  nav ul li a.activo {
+    background: white;
+    color: #AB99FA;
+    font-weight: 700;
+  }
+
+  /* Ocultar separadores en móvil */
+  nav ul li:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+}
+/* ===== FORZAR VISIBILIDAD DEL CONTENIDO ===== */
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+nav ul.mostrar + * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Cuando el menú está cerrado, todo visible */
+nav ul:not(.mostrar) ~ section,
+nav ul:not(.mostrar) ~ * section {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
 }
