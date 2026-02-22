@@ -120,7 +120,7 @@ nav ul li:not(:last-child)::after {
   display: none;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;  /* Cambiado a 50% para círculo perfecto */
+  border-radius: 50%;
   width: 45px;
   height: 45px;
   font-size: 1.6rem;
@@ -161,16 +161,16 @@ nav ul li:not(:last-child)::after {
   }
 
   .menu-toggle {
-    display: flex;  /* Mostrar en móvil */
+    display: flex;
   }
 
-  /* Menú móvil - CORREGIDO para no dejar página en blanco */
+  /* Menú móvil */
   nav ul {
     position: fixed;
     top: 60px;
     left: 0;
     width: 100%;
-    background: linear-gradient(135deg, rgba(171, 153, 250, 0.98), rgba(255, 179, 230, 0.98)); /* Más opaco */
+    background: linear-gradient(135deg, rgba(171, 153, 250, 0.98), rgba(255, 179, 230, 0.98));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -184,15 +184,15 @@ nav ul li:not(:last-child)::after {
     margin: 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    z-index: 999;  /* Asegurar que esté sobre el contenido */
-    pointer-events: none;  /* Evitar clicks cuando está oculto */
+    z-index: 999;
+    pointer-events: none;
   }
 
   nav ul.mostrar {
     max-height: 400px;
     opacity: 1;
     padding: 15px 0;
-    pointer-events: all;  /* Permitir clicks cuando está visible */
+    pointer-events: all;
   }
 
   nav ul li {
@@ -250,21 +250,6 @@ nav ul li:not(:last-child)::after {
     font-size: 1.4rem;
   }
 }
-/* ===== FORZAR VISIBILIDAD DEL CONTENIDO ===== */
-body {
-  overflow-x: hidden;
-  position: relative;
-}
 
-nav ul.mostrar + * {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Cuando el menú está cerrado, todo visible */
-nav ul:not(.mostrar) ~ section,
-nav ul:not(.mostrar) ~ * section {
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block !important;
-}
+/* ===== FIN DEL MENÚ ===== */
+/* 👇 ELIMINADO EL BLOQUE "FORZAR VISIBILIDAD" QUE CAUSABA EL PROBLEMA */
