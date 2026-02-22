@@ -404,7 +404,7 @@ input:focus, textarea:focus {
   top: 0;
   width: 400px;
   height: 100vh;
-  background-image: url('/fiesta-mariana/assets/borders.png');
+  background-image: url('/fiesta-mariana/assets/imagenes/borders.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -445,6 +445,7 @@ input:focus, textarea:focus {
 }
 
 /* 👇 ELIMINADO EL MASK-IMAGE QUE OCULTABA EL CONTENIDO EN DESKTOP */
+
 
 
 
