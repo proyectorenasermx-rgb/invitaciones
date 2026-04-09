@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#fdeff9, #ec38bc);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 420px;
+    margin: auto;
+    animation: fadeUp 1s ease;
+}
+
+/* CONTADOR */
+#contador {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+#contador div {
+    background: #f8bbd0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#contador span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* CONFIRMADOS */
+.confirmados {
+    background: #fdeff9;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* MAPA */
+iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 15px;
+    border: none;
+}
+
+/* REGALOS */
+.regalos {
+    list-style: none;
+    padding: 0;
+}
+
+.regalos li {
+    background: #fdeff9;
+    margin: 6px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.regalos li.seleccionado {
+    background: #c8e6c9;
+    transform: scale(1.05);
+}
+
+.regalos li.bloqueado {
+  background: #eee;
+  color: #999;
+  pointer-events: none;
+  text-decoration: line-through;
+}
+
+/* BOTONES */
+.btn-principal {
+    background: #ec38bc;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 16px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* ASISTENCIA */
+.asistencia {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.btn-asistencia {
+    padding: 14px 26px;
+    border-radius: 25px;
+    border: none;
+    background: #f8bbd0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-asistencia.activo {
+    background: #4caf50;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* FORMULARIO */
+.formulario input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.oculto { display: none; }
+
+/* BOTONES FLOTANTES */
+.btn-float {
+    position: fixed;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.musica {
+    bottom: 90px;
+    background: #f06292;
+}
+
+.whatsapp {
+    bottom: 20px;
+    background: #25D366;
+}
+
+/* ANIMACIONES */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* PC */
+@media (min-width: 768px) {
+    .container {
+        max-width: 700px;
+    }
+}
