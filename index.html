@@ -3,58 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>inviclicks</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./babyedsonmary.png" type="image/png">
 
-    <!-- Open Graph (WhatsApp / Facebook) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://proyectorenasermx-rgb.github.io">
-    <meta property="og:title" content="inviclicks">
-    <meta property="og:description" content="Invitaciones personalizadas">
-    <meta property="og:image" content="https://proyectorenasermx-rgb.github.io/">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
 
-    <!-- Twitter (opcional, pero correcto) -->
-    <meta name="twitter:card" content="summary_large_image">
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+        a {
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .mariana {
+            background: #6c5ce7;
+        }
+
+        .baby {
+            background: #e17055;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =====================
-     AUDIO
-===================== -->
-<audio id="musica" loop>
-    <source src="bobmarleybaby.mp3" type="audio/mpeg">
-</audio>
+<div class="contenedor">
+    <!-- Botón WhatsApp -->
+    <a href="https://wa.me/525614454159/?text=¡Hola!%20Les%20escribo%20por%20el%20Baby%20Shower" target="_blank" class="whatsapp">
+        WhatsApp
+    </a>
 
-<!-- =====================
-     BOTÓN MÚSICA
-===================== -->
-<div id="btnMusica" class="btn-float musica pulse">
-    🎵
+    <!-- Botón Mariana -->
+    <a href="./fiesta-mariana/index.html" class="mariana">
+        Mariana
+    </a>
+
+    <!-- Botón Baby -->
+    <a href="./BabyEdsonMary/index.html" class="baby">
+        Baby
+    </a>
 </div>
-
-<!-- =====================
-     CONTENEDOR
-===================== -->
-<!-- =====================
-     WHATSAPP
-===================== -->
-<a href="https://wa.me/525614454159/?text=%C2%A1Hola%21%0A%0ALes%20escribo%20por%20el%20Baby%20Shower"
-   class="btn-float whatsapp"
-   target="_blank">
-   <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- JS -->
-<script src="script.js"></script>
 
 </body>
 </html>
