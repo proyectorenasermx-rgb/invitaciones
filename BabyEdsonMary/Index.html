@@ -27,30 +27,39 @@
 
 <body>
 
-<!-- =====================
-     AUDIO
-===================== -->
-<audio id="musica" loop>
-    <source src="bobmarleybaby.mp3" type="audio/mpeg">
-</audio>
+    <!-- Música -->
+    <audio id="musica" autoplay loop>
+        <source src="imagenes/bobmarley.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- =====================
-     BOTÓN MÚSICA
-===================== -->
-<div id="btnMusica" class="btn-float musica pulse">
-    🎵
-</div>
+    <!-- Botón de pausa -->
+    <button id="btnMusica">⏸️ Pausar</button>
 
-<!-- =====================
-     CONTENEDOR
-===================== -->
-<div class="container">
+    <!-- Contenido principal -->
+    <div class="contenedor">
+        <div class="tarjeta">
+            <h1>¡Baby Shower!</h1>
+            <p>Te invitamos a celebrar la llegada de nuestro bebé 🍼</p>
 
-    <h1>👶 Baby Shower 👶</h1>
-    <p>Te invitamos a celebrar la llegada de nuestro bebé</p>
+            <p><strong>Fecha:</strong> 10 de Mayo</p>
+            <p><strong>Hora:</strong> 4:00 PM</p>
+            <p><strong>Lugar:</strong> Mi casita 🏡</p>
 
-    <h3>📅 15 de Julio 2026 | ⏰ 4:00 PM</h3>
+            <div class="botones">
+                <a href="https://wa.me/5256454874585" target="_blank" class="btn whatsapp">
+                    Comunícate con mamá 💚
+                </a>
 
+                <a href="https://wa.me/5258544854458" target="_blank" class="btn whatsapp">
+                    Comunícate con papá 💚
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Imágenes de jirafa -->
+    <img src="imagenes/jirafa_cuerpo.png" class="jirafa-cuerpo">
+    <img src="imagenes/cabeza_jirafa.png" class="jirafa-cabeza" id="cabeza">
     <!-- =====================
          CONTADOR
     ===================== -->
@@ -72,18 +81,7 @@
       loading="lazy">
     </iframe>
 
-    <!-- =====================
-         REGALOS
-    ===================== -->
-    <h3>🎁 Lista de Regalos</h3>
-    <ul class="regalos">
-        <li>🍼 Pañales</li>
-        <li>👕 Ropa 0-6 meses</li>
-        <li>🧴 Artículos de higiene</li>
-        <li>🛏️ Cobijitas</li>
-        <li>🧸 Juguetes</li>
-    </ul>
-
+  
     <!-- =====================
          BOTÓN FORMULARIO
     ===================== -->
@@ -112,14 +110,7 @@
 
 </div>
 
-<!-- =====================
-     WHATSAPP
-===================== -->
-<a href="https://wa.me/525614454159/?text=%C2%A1Hola%21%0A%0ALes%20escribo%20por%20el%20Baby%20Shower"
-   class="btn-float whatsapp"
-   target="_blank">
-   <i class="fab fa-whatsapp"></i>
-</a>
+
 
 <!-- JS -->
 <script src="script.js"></script>
