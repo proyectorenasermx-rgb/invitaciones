@@ -1,10 +1,109 @@
+/* =========================
+   ESTILOS BASE (PRIORIDAD 2 - SELVA / TARJETA)
+========================= */
+
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(#fdeff9, #ec38bc);
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #2e7d32; /* verde selva */
+    color: #fff;
+    overflow-x: hidden;
 }
+
+/* Botón música */
+#btnMusica {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffffaa;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* Tarjeta estilo cristal */
+.tarjeta {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    z-index: 10;
+    position: relative;
+}
+
+/* Botones WhatsApp */
+.botones {
+    margin-top: 20px;
+}
+
+.btn {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #25D366;
+    font-weight: bold;
+}
+
+/* =========================
+   JIRAFA
+========================= */
+
+/* Cuerpo (fijo, detrás) */
+.jirafa-cuerpo {
+    position: fixed;
+    left: -300px;
+    bottom: 0;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+
+    animation: balanceo 3s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+
+/* Cabeza (pegada a tarjeta, arriba derecha) */
+.jirafa-cabeza {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    height: 95%;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+/* Animación balanceo */
+@keyframes balanceo {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(1.5deg); }
+    40% { transform: rotate(-1deg); }
+    60% { transform: rotate(2deg); }
+    80% { transform: rotate(-1.5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* =========================
+   TARJETA ORIGINAL (INVITACIÓN AVANZADA)
+   (SE INTEGRA SIN ROMPER EL DISEÑO)
+========================= */
 
 .container {
     background: white;
@@ -13,6 +112,7 @@ body {
     max-width: 420px;
     margin: auto;
     animation: fadeUp 1s ease;
+    color: #333;
 }
 
 /* CONTADOR */
@@ -70,10 +170,10 @@ iframe {
 }
 
 .regalos li.bloqueado {
-  background: #eee;
-  color: #999;
-  pointer-events: none;
-  text-decoration: line-through;
+    background: #eee;
+    color: #999;
+    pointer-events: none;
+    text-decoration: line-through;
 }
 
 /* BOTONES */
