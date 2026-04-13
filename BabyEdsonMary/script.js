@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // =====================
     // CUENTA REGRESIVA
     // =====================
-    const fechaEvento = new Date("2026-07-15T16:00:00").getTime();
+    const fechaEvento = new Date("2026-05-16T14:00:00").getTime();
 
     setInterval(() => {
         const ahora = Date.now();
