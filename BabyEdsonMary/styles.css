@@ -365,3 +365,28 @@ iframe {
         opacity: 1;
     }
 }
+@media (max-width: 768px) {
+
+   .jirafa-cuerpo {
+    position: fixed;
+    left: -120px;
+    height: 100vh;
+    bottom: 0;
+    height: 100vh; /* 🔥 clave */
+    z-index: -1;
+    opacity: 0.4;
+        pointer-events: none;
+    
+}
+
+    .jirafa-cabeza {
+    position: fixed;
+    right: -180px;
+    top: 0; /* 🔥 pegada arriba */
+    height: 80vh; /* 🔥 tamaño controlado */
+    z-index: 10;
+}
+
+}
+
+
