@@ -1,45 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // =====================
-// MÚSICA (VERSIÓN SEGURA GITHUB)
-// =====================
-const musica = document.getElementById("musica");
-const btnMusica = document.getElementById("btnMusica");
+    // MÚSICA
+    // =====================
+    const musica = document.getElementById("musica");
+    const btnMusica = document.getElementById("btnMusica");
 
-function iniciarMusica() {
-    if (!musica) return;
+    function iniciarMusica(e) {
+        // Evita conflicto si tocan el botón directamente
+        if (e.target.id === "btnMusica") return;
 
-    musica.play()
-        .then(() => {
-            if (btnMusica) {
-                btnMusica.textContent = "⏸️ Pausar música";
-            }
-        })
-        .catch(err => {
-            console.log("Error al reproducir:", err);
-        });
-
-    // Se elimina después de ejecutarse
-    document.removeEventListener("click", iniciarMusica);
-    document.removeEventListener("touchstart", iniciarMusica);
-}
-
-// 👇 IMPORTANTE: sin { once: true }
-document.addEventListener("click", iniciarMusica);
-document.addEventListener("touchstart", iniciarMusica);
-
-// Botón manual
-if (btnMusica) {
-    btnMusica.addEventListener("click", () => {
-        if (musica.paused) {
-            musica.play();
-            btnMusica.textContent = "⏸️ Pausar música";
-        } else {
-            musica.pause();
-            btnMusica.textContent = "▶️ Reproducir música";
+        if (musica && musica.paused) {
+            musica.play().then(() => {
+                if (btnMusica) {
+                    btnMusica.textContent = "⏸️ Pausar música";
+                }
+            }).catch(() => {});
         }
-    });
-}
+    }
+
+    // 🔥 Se activa al tocar pantalla (móvil + PC)
+    document.addEventListener("touchstart", iniciarMusica, { once: true });
+    document.addEventListener("click", iniciarMusica, { once: true });
+
+    // Botón manual
+    if (musica && btnMusica) {
+        btnMusica.addEventListener("click", () => {
+            if (musica.paused) {
+                musica.play();
+                btnMusica.textContent = "⏸️ Pausar música";
+            } else {
+                musica.pause();
+                btnMusica.textContent = "▶️ Reproducir música";
+            }
+        });
+    }
 
     // =====================
     // FORMULARIO
@@ -154,3 +149,29 @@ if (btnMusica) {
     }, 1000);
 
 });
+
+const contenedor = document.querySelector(".lluvia-hojas");
+
+for (let i = 0; i < 25; i++) {
+    let hoja = document.createElement("img");
+
+    // Cambia entre diferentes hojas
+    let hojas = ["hoja1.png", "hoja2.png", "hoja3.png"];
+    hoja.src = "./Imagenes/" + hojas[Math.floor(Math.random() * hojas.length)];
+
+    hoja.classList.add("hoja-lluvia");
+
+    // Posición horizontal aleatoria
+    hoja.style.left = Math.random() * 100 + "vw";
+
+    // Tamaño aleatorio
+    hoja.style.width = (40 + Math.random() * 80) + "px";
+
+    // Duración diferente (más natural)
+    hoja.style.animationDuration = (5 + Math.random() * 8) + "s";
+
+    // Delay para que no caigan juntas
+    hoja.style.animationDelay = Math.random() * 5 + "s";
+
+    contenedor.appendChild(hoja);
+}
