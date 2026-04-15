@@ -6,8 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const musica = document.getElementById("musica");
     const btnMusica = document.getElementById("btnMusica");
 
-    if (musica && btnMusica) {
+    function iniciarMusica(e) {
+        // Evita conflicto si tocan el botón directamente
+        if (e.target.id === "btnMusica") return;
 
+        if (musica && musica.paused) {
+            musica.play().then(() => {
+                if (btnMusica) {
+                    btnMusica.textContent = "⏸️ Pausar música";
+                }
+            }).catch(() => {});
+        }
+    }
+
+    // 🔥 Se activa al tocar pantalla (móvil + PC)
+    document.addEventListener("touchstart", iniciarMusica, { once: true });
+    document.addEventListener("click", iniciarMusica, { once: true });
+
+    // Botón manual
+    if (musica && btnMusica) {
         btnMusica.addEventListener("click", () => {
             if (musica.paused) {
                 musica.play();
@@ -17,20 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 btnMusica.textContent = "▶️ Reproducir música";
             }
         });
-
-        // 🔥 AUTO PLAY AL PRIMER TOQUE (sin conflicto)
-        document.addEventListener("click", function (e) {
-
-            if (e.target.id === "btnMusica") return;
-
-            if (musica.paused) {
-                musica.play().then(() => {
-                    btnMusica.textContent = "⏸️ Pausar música";
-                }).catch(() => {});
-            }
-
-        }, { once: true });
-
     }
 
     // =====================
