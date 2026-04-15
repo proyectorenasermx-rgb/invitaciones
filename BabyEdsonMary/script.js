@@ -152,26 +152,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const contenedor = document.querySelector(".lluvia-hojas");
 
-for (let i = 0; i < 25; i++) {
+// MÁS hojas para cubrir toda la pantalla
+for (let i = 0; i < 40; i++) {
+
     let hoja = document.createElement("img");
 
-    // Cambia entre diferentes hojas
     let hojas = ["hoja1.png", "hoja2.png", "hoja3.png"];
     hoja.src = "./Imagenes/" + hojas[Math.floor(Math.random() * hojas.length)];
 
     hoja.classList.add("hoja-lluvia");
 
-    // Posición horizontal aleatoria
-    hoja.style.left = Math.random() * 100 + "vw";
+    // 🔥 POSICIÓN COMPLETA (incluye izquierda real)
+    hoja.style.left = (Math.random() * 120 - 10) + "vw";
+    // (esto permite que salgan desde fuera de pantalla también)
 
-    // Tamaño aleatorio
-    hoja.style.width = (40 + Math.random() * 80) + "px";
+    // 🔥 TAMAÑO MUCHO MÁS VARIABLE
+    let size = 30 + Math.random() * 120;
+    hoja.style.width = size + "px";
 
-    // Duración diferente (más natural)
-    hoja.style.animationDuration = (5 + Math.random() * 8) + "s";
+    // 🔥 VELOCIDAD DIFERENTE
+    hoja.style.animationDuration = (6 + Math.random() * 10) + "s";
 
-    // Delay para que no caigan juntas
-    hoja.style.animationDelay = Math.random() * 5 + "s";
+    // 🔥 DELAY RANDOM
+    hoja.style.animationDelay = Math.random() * 10 + "s";
+
+    // 🔥 PROFUNDIDAD (simula distancia)
+    hoja.style.opacity = 0.3 + Math.random() * 0.5;
 
     contenedor.appendChild(hoja);
 }
