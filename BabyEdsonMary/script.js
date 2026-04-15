@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnMusica = document.getElementById("btnMusica");
 
     if (musica && btnMusica) {
+
         btnMusica.addEventListener("click", () => {
             if (musica.paused) {
                 musica.play();
@@ -16,7 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 btnMusica.textContent = "▶️ Reproducir música";
             }
         });
+
+        // 🔥 AUTO PLAY AL PRIMER TOQUE
+        document.addEventListener("click", function () {
+            if (musica.paused) {
+                musica.play();
+                btnMusica.textContent = "⏸️ Pausar música";
+            }
+        }, { once: true });
+
     }
+
+});
 
     // =====================
     // FORMULARIO
