@@ -18,17 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // 🔥 AUTO PLAY AL PRIMER TOQUE
-        document.addEventListener("click", function () {
+        // 🔥 AUTO PLAY AL PRIMER TOQUE (sin conflicto)
+        document.addEventListener("click", function (e) {
+
+            if (e.target.id === "btnMusica") return;
+
             if (musica.paused) {
-                musica.play();
-                btnMusica.textContent = "⏸️ Pausar música";
+                musica.play().then(() => {
+                    btnMusica.textContent = "⏸️ Pausar música";
+                }).catch(() => {});
             }
+
         }, { once: true });
 
     }
-
-});
 
     // =====================
     // FORMULARIO
@@ -135,18 +138,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const minutos = Math.floor((d / (1000 * 60)) % 60);
         const segundos = Math.floor((d / 1000) % 60);
 
-        const elDias = document.getElementById("dias");
-        const elHoras = document.getElementById("horas");
-        const elMin = document.getElementById("minutos");
-        const elSeg = document.getElementById("segundos");
-
-        if (elDias) elDias.textContent = dias;
-        if (elHoras) elHoras.textContent = horas;
-        if (elMin) elMin.textContent = minutos;
-        if (elSeg) elSeg.textContent = segundos;
+        document.getElementById("dias").textContent = dias;
+        document.getElementById("horas").textContent = horas;
+        document.getElementById("minutos").textContent = minutos;
+        document.getElementById("segundos").textContent = segundos;
 
     }, 1000);
-
-    
 
 });
