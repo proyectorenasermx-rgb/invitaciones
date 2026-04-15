@@ -5,8 +5,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #2e7d32; /* verde selva */
-    color: #fff;
+    background: #f8fbca; /* verde selva */
+    color: #913206fa;
     
 }
 
@@ -76,7 +76,7 @@ body {
     bottom: 0;
     height: 100%;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.95;
     pointer-events: none;
     transform-origin: bottom center;
 }
@@ -182,7 +182,7 @@ iframe {
 
 /* BOTONES */
 .btn-principal {
-    background: linear-gradient(45deg, #25D366, #00ff88);
+    background: linear-gradient(45deg, #ff4b04, #ffe600);
     color: white;
     border: none;
     padding: 18px 32px;
@@ -192,12 +192,14 @@ iframe {
     font-weight: bold;
     position: relative;
     z-index: 50;
+    margin-bottom: 25px;
+    margin-top: 30px;
 
     /* NEÓN */
     box-shadow: 
-        0 0 10px #25D366,
-        0 0 20px #25D366,
-        0 0 40px #00ff88;
+        0 0 10px #faad07,
+        0 0 20px #d3b925,
+        0 0 40px #ff8800;
 
     animation: neonPulse 2s infinite, reboteSuave 3s ease-in-out infinite;
     transition: all 0.3s ease;
@@ -242,7 +244,7 @@ iframe {
 }
 
 .btn-asistencia.activo {
-    background: #4caf50;
+    background: #ff8800;
     color: white;
     transform: scale(1.1);
 }
@@ -251,9 +253,10 @@ iframe {
 .formulario input {
     width: 90%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 10px 0;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff4b04;
+   
 }
 
 .oculto { display: none; }
@@ -521,5 +524,48 @@ iframe {
     }
     100% {
         transform: translateX(-30%);
+    }
+}
+/* =========================
+   🎉 MENSAJE GRACIAS
+========================= */
+
+.mensaje-gracias {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+
+    animation: aparecerGracias 0.8s ease forwards;
+}
+
+/* Animación entrada */
+@keyframes aparecerGracias {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animación salida formulario */
+.cerrar-form {
+    animation: cerrarForm 0.5s ease forwards;
+}
+
+@keyframes cerrarForm {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
     }
 }
