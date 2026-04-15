@@ -35,9 +35,14 @@
     <!-- Botón de pausa -->
     <button id="btnMusica">⏸️ Pausar</button>
 
+ <!-- Imágenes de jirafa -->
+    <img src="./Imagenes/jirafa_cuerpo.png" class="jirafa-cuerpo">
+    <img src="./Imagenes/cabeza_jirafa.png" class="jirafa-cabeza">
+
     <!-- Contenido principal -->
     <div class="contenedor">
         <div class="tarjeta">
+                   
             <h1>¡Baby Shower!</h1>
             <p>Te invitamos a celebrar la llegada de nuestro bebé 🍼</p>
 
@@ -45,21 +50,36 @@
             <p><strong>Hora:</strong> 2:00 PM</p>
             <p><strong>Lugar:</strong> Mi casita 🏡</p>
 
-            <div class="botones">
-                <a href="https://wa.me/525618936946" target="_blank" class="btn whatsapp">
-                    Comunícate con mamá 💚
-                </a>
+             <!-- =====================
+         BOTÓN FORMULARIO
+    ===================== -->
+    <button id="btnFormulario" class="btn-principal pulse">
+        Confirmar asistencia
+    </button>
+    <!-- =====================
+         FORMULARIO
+    ===================== -->
+    <form id="formulario" class="formulario oculto">
 
-                <a href="https://wa.me/525568910330" target="_blank" class="btn whatsapp">
-                    Comunícate con papá 💚
-                </a>
-            </div>
+        <input id="nombre" type="text" placeholder="Nombre completo" required>
+        <input id="telefono" type="tel" placeholder="ID" required>
+
+        <h4>¿Asistirás?</h4>
+        <div class="asistencia">
+            <button type="button" class="btn-asistencia" data-valor="SI">Sí</button>
+            <button type="button" class="btn-asistencia" data-valor="NO">No</button>
+        </div>
+
+        <button type="submit" class="btn-principal btn-grande pulse">
+            ENVIAR CONFIRMACIÓN
+        </button>
+    </form>
+
+            
         </div>
     </div>
 
-    <!-- Imágenes de jirafa -->
-    <img src="./Imagenes/jirafa_cuerpo.png" class="jirafa-cuerpo">
-    <img src="./Imagenes/cabeza_jirafa.png" class="jirafa-cabeza" id="cabeza">
+
     <!-- =====================
          CONTADOR
     ===================== -->
@@ -75,39 +95,12 @@
     ===================== -->
     <h3>📍 Ubicación</h3>
 
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d861.2235!2d-99.0222272!3d19.3945985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fdba5a8e6fbb%3A0xce4dfeb8b07a54b6!2sNavaCasa!5e0!3m2!1ses!2smx!4v1700000000000"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.502110218437!2d-98.98113519999997!3d19.370533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e300440f5b37%3A0x372136a47b08e3a!2sSALON%20JARDIN%20DE%20EVENTOS%20CORAZON!5e1!3m2!1ses-419!2smx!4v1776212188656!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
   
-    <!-- =====================
-         BOTÓN FORMULARIO
-    ===================== -->
-    <button id="btnFormulario" class="btn-principal pulse">
-        Confirmar asistencia
-    </button>
+   
 
-    <!-- =====================
-         FORMULARIO
-    ===================== -->
-    <form id="formulario" class="formulario oculto">
-
-        <input id="nombre" type="text" placeholder="Nombre completo" required>
-        <input id="telefono" type="tel" placeholder="Teléfono" required>
-
-        <h4>¿Asistirás?</h4>
-        <div class="asistencia">
-            <button type="button" class="btn-asistencia" data-valor="SI">Sí</button>
-            <button type="button" class="btn-asistencia" data-valor="NO">No</button>
-        </div>
-
-        <button type="submit" class="btn-principal btn-grande pulse">
-            ENVIAR CONFIRMACIÓN
-        </button>
-    </form>
-
+    
 </div>
 
 
