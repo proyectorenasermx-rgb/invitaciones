@@ -78,8 +78,6 @@ body {
     z-index: -1;
     opacity: 0.5;
     pointer-events: none;
-
-    animation: balanceo 3s ease-in-out infinite;
     transform-origin: bottom center;
 }
 
@@ -374,7 +372,7 @@ iframe {
     bottom: 0;
     height: 100vh; /* 🔥 clave */
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.9;
         pointer-events: none;
     
 }
@@ -389,4 +387,139 @@ iframe {
 
 }
 
+/* =========================
+   🌿 EFECTO HOJAS SELVA (NUEVO)
+========================= */
 
+.hojas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -2; /* debajo de la tarjeta */
+    overflow: hidden;
+}
+
+.hoja {
+    position: absolute;
+    width: 120px;
+    opacity: 0.2;
+    filter: blur(1px);
+    z-index: -2;
+}
+
+/* POSICIONES + ANIMACIONES */
+
+.h1 {
+    top: 5%;
+    left: 10%;
+    animation: viento 6s ease-in-out infinite;
+}
+
+.h2 {
+    top: 20%;
+    left: 75%;
+    animation: viento 8s ease-in-out infinite reverse;
+}
+
+.h3 {
+    top: 60%;
+    left: 15%;
+    animation: viento 7s ease-in-out infinite;
+}
+
+.h4 {
+    top: 75%;
+    left: 70%;
+    animation: viento 9s ease-in-out infinite reverse;
+}
+
+/* 🌬️ Movimiento natural */
+@keyframes viento {
+    0%   { transform: rotate(0deg) translateX(0px); }
+    25%  { transform: rotate(3deg) translateX(5px); }
+    50%  { transform: rotate(-4deg) translateX(12px); }
+    75%  { transform: rotate(2deg) translateX(6px); }
+    100% { transform: rotate(0deg) translateX(0px); }
+}
+
+/* =========================
+   🌿 LLUVIA DE HOJAS PRO
+========================= */
+
+.lluvia-hojas {
+    position: fixed;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    pointer-events: none;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.hoja-lluvia {
+    position: absolute;
+    top: -100px;
+    opacity: 0.6;
+    filter: blur(0.5px);
+    z-index: -2;
+    
+    animation: caer linear infinite;
+}
+
+/* 🍃 Caída + giro */
+@keyframes caer {
+    0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+    }
+
+    25% {
+        transform: translateY(25vh) rotate(90deg) translateX(20px);
+    }
+
+    50% {
+        transform: translateY(50vh) rotate(180deg) translateX(-20px);
+    }
+
+    75% {
+        transform: translateY(75vh) rotate(270deg) translateX(15px);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg) translateX(-10px);
+    }
+}
+
+/* =========================
+   🌫️ NIEBLA SELVA SUAVE
+========================= */
+
+.niebla {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+
+    background: url('./Imagenes/niebla.png') repeat-x;
+    background-size: cover;
+    opacity: 0.5;
+
+    animation: moverNiebla 60s linear infinite;
+    animation-duration: 90s;
+}
+
+/* Movimiento lento horizontal */
+@keyframes moverNiebla {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-30%);
+    }
+}
