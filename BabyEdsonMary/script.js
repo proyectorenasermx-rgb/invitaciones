@@ -1,40 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // =====================
-    // MÚSICA
-    // =====================
-    const musica = document.getElementById("musica");
-    const btnMusica = document.getElementById("btnMusica");
+// MÚSICA (VERSIÓN SEGURA GITHUB)
+// =====================
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("btnMusica");
 
-    function iniciarMusica(e) {
-        // Evita conflicto si tocan el botón directamente
-        if (e.target.id === "btnMusica") return;
+function iniciarMusica() {
+    if (!musica) return;
 
-        if (musica && musica.paused) {
-            musica.play().then(() => {
-                if (btnMusica) {
-                    btnMusica.textContent = "⏸️ Pausar música";
-                }
-            }).catch(() => {});
-        }
-    }
-
-    // 🔥 Se activa al tocar pantalla (móvil + PC)
-    document.addEventListener("touchstart", iniciarMusica, { once: true });
-    document.addEventListener("click", iniciarMusica, { once: true });
-
-    // Botón manual
-    if (musica && btnMusica) {
-        btnMusica.addEventListener("click", () => {
-            if (musica.paused) {
-                musica.play();
+    musica.play()
+        .then(() => {
+            if (btnMusica) {
                 btnMusica.textContent = "⏸️ Pausar música";
-            } else {
-                musica.pause();
-                btnMusica.textContent = "▶️ Reproducir música";
             }
+        })
+        .catch(err => {
+            console.log("Error al reproducir:", err);
         });
-    }
+
+    // Se elimina después de ejecutarse
+    document.removeEventListener("click", iniciarMusica);
+    document.removeEventListener("touchstart", iniciarMusica);
+}
+
+// 👇 IMPORTANTE: sin { once: true }
+document.addEventListener("click", iniciarMusica);
+document.addEventListener("touchstart", iniciarMusica);
+
+// Botón manual
+if (btnMusica) {
+    btnMusica.addEventListener("click", () => {
+        if (musica.paused) {
+            musica.play();
+            btnMusica.textContent = "⏸️ Pausar música";
+        } else {
+            musica.pause();
+            btnMusica.textContent = "▶️ Reproducir música";
+        }
+    });
+}
 
     // =====================
     // FORMULARIO
