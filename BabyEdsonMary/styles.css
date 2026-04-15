@@ -30,7 +30,7 @@ body {
     justify-content: center;
     align-items: flex-start; /* 🔥 ya no centrado vertical */
     min-height: auto; /* 🔥 quitamos el 100vh */
-    padding: 80px 15px; /* 🔥 menos espacio */
+    padding: 180px 15px 100px 15px; /* 🔥 menos espacio */
     margin-top: 10px;
 }
 
@@ -369,7 +369,7 @@ iframe {
 
    .jirafa-cuerpo {
     position: fixed;
-    left: -120px;
+    left: -250px;
     height: 100vh;
     bottom: 0;
     height: 100vh; /* 🔥 clave */
@@ -381,7 +381,7 @@ iframe {
 
     .jirafa-cabeza {
     position: fixed;
-    right: -180px;
+    right: -220px;
     top: 0; /* 🔥 pegada arriba */
     height: 80vh; /* 🔥 tamaño controlado */
     z-index: 10;
