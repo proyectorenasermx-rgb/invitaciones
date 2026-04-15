@@ -135,18 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }, 1000);
 
-    // =====================
-    // JIRAFA (SCROLL)
-    // =====================
-    const cabeza = document.querySelector(".jirafa-cabeza");
-
-    if (cabeza) {
-        window.addEventListener("scroll", () => {
-            let scrollY = window.scrollY;
-
-            // efecto suave
-            cabeza.style.transform = `translateY(${scrollY * 0.3}px)`;
-        });
-    }
+    
 
 });
