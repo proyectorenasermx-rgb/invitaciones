@@ -7,7 +7,7 @@ body {
     font-family: Arial, sans-serif;
     background: #2e7d32; /* verde selva */
     color: #fff;
-    overflow-x: hidden;
+    
 }
 
 /* Botón música */
@@ -18,19 +18,20 @@ body {
     padding: 10px;
     border: none;
     border-radius: 10px;
-    background: #ffffffaa;
+    background: #25D366;
     cursor: pointer;
     z-index: 1000;
+    
 }
 
 /* Contenedor principal */
 .contenedor {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    position: relative;
+    align-items: flex-start; /* 🔥 ya no centrado vertical */
+    min-height: auto; /* 🔥 quitamos el 100vh */
+    padding: 80px 15px; /* 🔥 menos espacio */
+    margin-top: 10px;
 }
 
 /* Tarjeta estilo cristal */
@@ -43,8 +44,9 @@ body {
     max-width: 400px;
     width: 100%;
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    z-index: 10;
+    z-index: 5;
     position: relative;
+    margin-top: 0;
 }
 
 /* Botones WhatsApp */
@@ -70,11 +72,12 @@ body {
 /* Cuerpo (fijo, detrás) */
 .jirafa-cuerpo {
     position: fixed;
-    left: -300px;
+    left: -480px;
     bottom: 0;
     height: 100%;
-    z-index: 1;
+    z-index: -1;
     opacity: 0.5;
+    pointer-events: none;
 
     animation: balanceo 3s ease-in-out infinite;
     transform-origin: bottom center;
@@ -83,11 +86,13 @@ body {
 /* Cabeza (pegada a tarjeta, arriba derecha) */
 .jirafa-cabeza {
     position: fixed;
-    right: -300px;
+    right: -500px;
+    bottom: center;
     top: 0;
     height: 95%;
     z-index: 10;
-    transition: transform 0.2s ease;
+    pointer-events: none;
+    
 }
 
 /* Animación balanceo */
@@ -110,7 +115,7 @@ body {
     border-radius: 20px;
     padding: 25px;
     max-width: 420px;
-    margin: auto;
+    margin: 0 auto;
     animation: fadeUp 1s ease;
     color: #333;
 }
@@ -119,11 +124,12 @@ body {
 #contador {
     display: flex;
     justify-content: space-around;
-    margin: 15px 0;
+    margin: 5px 0;
+    margin-top: 0;
 }
 
 #contador div {
-    background: #f8bbd0;
+    background: #25D366;
     padding: 10px;
     border-radius: 10px;
 }
@@ -178,14 +184,36 @@ iframe {
 
 /* BOTONES */
 .btn-principal {
-    background: #ec38bc;
+    background: linear-gradient(45deg, #25D366, #00ff88);
     color: white;
     border: none;
-    padding: 12px 22px;
-    border-radius: 25px;
+    padding: 18px 32px;
+    border-radius: 40px;
     cursor: pointer;
-    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    z-index: 50;
+
+    /* NEÓN */
+    box-shadow: 
+        0 0 10px #25D366,
+        0 0 20px #25D366,
+        0 0 40px #00ff88;
+
+    animation: neonPulse 2s infinite, reboteSuave 3s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
+
+/* Hover más pro */
+.btn-principal:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 15px #25D366,
+        0 0 30px #25D366,
+        0 0 60px #00ff88;
+}
+
 
 .btn-enviar {
     width: 100%;
@@ -210,7 +238,7 @@ iframe {
     padding: 14px 26px;
     border-radius: 25px;
     border: none;
-    background: #f8bbd0;
+    background: #25D366;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -250,7 +278,7 @@ iframe {
 
 .musica {
     bottom: 90px;
-    background: #f06292;
+    background: #25D366;
 }
 
 .whatsapp {
@@ -278,5 +306,62 @@ iframe {
 @media (min-width: 768px) {
     .container {
         max-width: 700px;
+    }
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow: 
+            0 0 5px #25D366,
+            0 0 10px #25D366,
+            0 0 20px #00ff88;
+    }
+    50% {
+        box-shadow: 
+            0 0 15px #25D366,
+            0 0 30px #25D366,
+            0 0 60px #00ff88;
+    }
+    100% {
+        box-shadow: 
+            0 0 5px #25D366,
+            0 0 10px #25D366,
+            0 0 20px #00ff88;
+    }
+}
+
+/* Rebote elegante (no exagerado) */
+@keyframes reboteSuave {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+#btnFormulario {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8);
+    
+    animation: aparecerPremium 1.2s ease forwards;
+    animation-delay: 1.2s;
+
+    position: relative;
+    z-index: 100;
+}
+
+@keyframes aparecerPremium {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.7);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-12px) scale(1.08);
+    }
+    80% {
+        transform: translateY(4px) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
 }
