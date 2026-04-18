@@ -66,6 +66,31 @@ regalos.forEach(item => {
     });
 });
 
+const inputAdultos = document.getElementById("ACOMPAÑANTES_ADULTOS");
+const inputInfantiles = document.getElementById("ACOMPAÑANTES_INFANTILES");
+const errorBoletos = document.getElementById("errorBoletos");
+const btnEnviar = document.getElementById("btnEnviar");
+
+function validarBoletos() {
+    const adultos = parseInt(inputAdultos?.value || "0");
+    const infantiles = parseInt(inputInfantiles?.value || "0");
+
+    if (adultos === 0 && infantiles === 0) {
+        if (errorBoletos) errorBoletos.style.display = "block";
+        if (btnEnviar) btnEnviar.disabled = true;
+    } else {
+        if (errorBoletos) errorBoletos.style.display = "none";
+        if (btnEnviar) btnEnviar.disabled = false;
+    }
+}
+
+// 👇 escuchar cambios en tiempo real
+if (inputAdultos) inputAdultos.addEventListener("input", validarBoletos);
+if (inputInfantiles) inputInfantiles.addEventListener("input", validarBoletos);
+
+// 👇 ejecutar al cargar
+validarBoletos();
+
 // =====================
 // ASISTENCIA
 // =====================
@@ -83,7 +108,9 @@ botonesAsistencia.forEach(btn => {
 // =====================
 // ENVIAR FORMULARIO
 // =====================
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbyGMrtlVuumCTWYga6rqb96U7erfKx-1j9Pn5-UJr3Ift4KldxBnBZyIwqgNZyLFPw2/exec";
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbz7eWts4T0uHLa17fKOYg1vW3C15EIWGcq4f21L4NHa7l44T6OidNAmRiQgGGOXb6yR/exec"
+
+
 
 if (formulario) {
     formulario.addEventListener("submit", function (e) {
@@ -91,6 +118,22 @@ if (formulario) {
 
         if (enviando) return; // 🚫 evita doble envío
 
+        const adultos = parseInt(document.getElementById("ACOMPAÑANTES_ADULTOS")?.value || "0");
+        const infantiles = parseInt(document.getElementById("ACOMPAÑANTES_INFANTILES")?.value || "0");
+
+        // 🚫 Validación: al menos un boleto
+        if (adultos === 0 && infantiles === 0) {
+            alert("Debes seleccionar al menos un boleto (adulto o infantil)");
+            return;
+        }
+
+        // 🚫 Validación: no negativos
+        if (adultos < 0 || infantiles < 0) {
+            alert("Los boletos no pueden ser negativos");
+            return;
+        }
+
+        // 🚫 Validación: asistencia
         if (!asistenciaSeleccionada) {
             alert("Selecciona Sí o No");
             return;
@@ -104,39 +147,41 @@ if (formulario) {
             botonEnviar.disabled = true;
         }
 
+        const datos = new URLSearchParams({
+            nombre: document.getElementById("nombre")?.value,
+            telefono: document.getElementById("telefono")?.value,
+            adultos: adultos,
+            infantiles: infantiles,
+            asistencia: asistenciaSeleccionada,
+            regalos: regalosSeleccionados.join(", ")
+        });
+
         fetch(URL_SCRIPT, {
             method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                nombre: document.getElementById("nombre")?.value,
-                telefono: document.getElementById("telefono")?.value,
-                asistencia: asistenciaSeleccionada,
-                regalos: regalosSeleccionados.join(", ")
-            })
+            body: datos
         })
         .then(() => {
 
-            // 🎬 animación rápida
             formulario.classList.add("cerrar-form");
 
             setTimeout(() => {
                 formulario.classList.add("oculto");
 
-                // 🎉 mensaje
                 if (mensaje) {
                     mensaje.classList.remove("oculto");
                 }
 
-                // 🔄 limpiar estado
                 formulario.reset();
                 regalosSeleccionados = [];
                 asistenciaSeleccionada = "";
 
+                // 🔄 reset visual de boletos
+                document.getElementById("ACOMPAÑANTES_ADULTOS").value = 0;
+                document.getElementById("ACOMPAÑANTES_INFANTILES").value = 0;
+
                 regalos.forEach(r => r.classList.remove("seleccionado"));
                 botonesAsistencia.forEach(b => b.classList.remove("activo"));
 
-                // 🔁 permitir otro envío después de unos segundos
                 setTimeout(() => {
                     enviando = false;
 
@@ -154,13 +199,15 @@ if (formulario) {
                         mensaje.classList.add("oculto");
                     }
 
-                }, 2500); // 🔥 tiempo más corto y controlado
+                }, 2500);
 
-            }, 300); // 🔥 animación más rápida
+            }, 300);
 
         });
     });
 }
+
+
 
 let enviando = false;
 // =====================
@@ -215,3 +262,5 @@ if (contenedor) {
 
 
 });
+
+
