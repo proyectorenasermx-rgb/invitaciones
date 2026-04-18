@@ -234,6 +234,7 @@ iframe {
     border-radius: 25px;
     border: none;
     background: #0b7431;
+    color: white;
     cursor: pointer;
     transition: 0.3s;
 }
