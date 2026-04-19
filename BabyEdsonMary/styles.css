@@ -137,6 +137,25 @@ body {
     font-weight: bold;
 }
 
+/*CONTADOR DOMINGO*/
+#contador2 {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0;
+    margin-top: 0;
+}
+
+#contador2 div {
+    background: #25D366;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#contador2 span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
 /* CONFIRMADOS */
 .confirmados {
     background: #fdeff9;
