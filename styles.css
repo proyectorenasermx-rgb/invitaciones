@@ -13,7 +13,6 @@ body {
     margin: auto;
     animation: fadeUp 1s ease;
 }
-
 /* CONTADOR */
 #contador {
     display: flex;
