@@ -213,7 +213,7 @@ let enviando = false;
 // =====================
 // CUENTA REGRESIVA
 // =====================
-const fechaEvento = new Date("2026-05-16T14:00:00").getTime();
+const fechaEvento = new Date("2026-05-16T13:00:00").getTime();
 
 setInterval(() => {
     const ahora = Date.now();
@@ -232,6 +232,28 @@ setInterval(() => {
 
 }, 1000);
 
+// =====================
+// CUENTA REGRESIVA 2
+// =====================
+const fechaEvento2 = new Date("2026-05-17T13:00:00").getTime();
+
+setInterval(() => {
+    const ahora = Date.now();
+    const d = fechaEvento2 - ahora;
+    if (d <= 0) return;
+
+    const dias = Math.floor(d / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((d / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((d / (1000 * 60)) % 60);
+    const segundos = Math.floor((d / 1000) % 60);
+
+    document.getElementById("dias2").textContent = dias;
+    document.getElementById("horas2").textContent = horas;
+    document.getElementById("minutos2").textContent = minutos;
+    document.getElementById("segundos2").textContent = segundos;
+
+}, 1000);
+    
 // =====================
 // 🌿 LLUVIA DE HOJAS
 // =====================
