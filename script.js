@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // =====================
+    // ======================
     // BOTÓN MÚSICA
     // =====================
     const musica = document.getElementById("musica");
