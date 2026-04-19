@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baby Shower Edson & Mary</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./babyedsonmary.png" type="image/png">
+
+    <!-- Open Graph (WhatsApp / Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proyectorenasermx-rgb.github.io/BabyShower/">
+    <meta property="og:title" content="Baby Shower de DANTE">
+    <meta property="og:description" content="Preparémonos para recibir a Dante con mucho amor. Nos alegra compartir este momento con ustedes.">
+    <meta property="og:image" content="https://inviclicks.com/BabyEdsonMary/Imagenes/whatsappsabado.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter (opcional, pero correcto) -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<!-- 🌿 LLUVIA DE HOJAS -->
+<div class="lluvia-hojas"></div>
+<!-- 🌫️ NIEBLA SELVA -->
+<div class="niebla"></div>
+
+<body>
+
+    
+
+    <!-- Música -->
+    <audio id="musica" autoplay loop>
+        <source src="./Imagenes/Cancionesdesol.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón de pausa 
+    <button id="btnMusica">⏸️ Pausar MÚSICA</button>-->
+
+ <!-- Imágenes de jirafa -->
+    <img src="./Imagenes/jirafa_cuerpo.png" class="jirafa-cuerpo">
+    <img src="./Imagenes/cabeza_jirafa.png" class="jirafa-cabeza">
+
+    <!-- Contenido principal -->
+    <div class="contenedor">
+        <div class="tarjeta">
+                   
+            <h1>¡Baby Shower!</h1>
+            <p>Te invitamos a celebrar la llegada de nuestro bebé 🍼</p>
+
+            <p><strong>Fecha:</strong> 16 de Mayo</p>
+            <p><strong>Hora:</strong> 1:00 PM</p>
+            <p><strong>Lugar:</strong> SALON JARDIN DE EVENTOS CORAZON 
+            <p><strong>Dirección:</strong> 163 Ote. 13
+Cdad. Nezahualcóyotl, Estado de México</p>
+
+             <!-- =====================
+         BOTÓN FORMULARIO
+    ===================== -->
+    <button id="btnFormulario" class="btn-principal pulse">
+        Confirmar asistencia
+    </button>
+    <!-- =====================
+         FORMULARIO
+    ===================== -->
+    <form id="formulario" class="formulario oculto">
+
+        <label for="nombre">Nombre completo</label>
+<input id="nombre" type="text" required>
+
+<label for="telefono">ID (encuentralo en el mensaje de WhatsApp)</label>
+<input id="telefono" type="text" required>
+
+<label for="ACOMPAÑANTES_ADULTOS">Boletos adultos</label>
+<input id="ACOMPAÑANTES_ADULTOS" type="number" min="0">
+
+<label for="ACOMPAÑANTES_INFANTILES">Boletos infantiles</label>
+<input id="ACOMPAÑANTES_INFANTILES" type="number"  min="0">
+ <p id="errorBoletos" style="color:red; display:none;">
+Debes seleccionar al menos un boleto
+</p>
+
+        <h4>¿Asistirás?</h4>
+        <div class="asistencia">
+            <button type="button" class="btn-asistencia" data-valor="SI">Sí</button>
+            <button type="button" class="btn-asistencia" data-valor="NO">No</button>
+        </div>
+
+        <button type="submit" class="btn-principal btn-grande pulse">
+            ENVIAR CONFIRMACIÓN
+        </button>
+       
+    </form>
+
+            <div id="mensajeGracias" class="mensaje-gracias oculto">
+    <h2>🎉 ¡Gracias!</h2>
+    <p>Tu confirmación ha sido enviada 💚</p>
+</div>
+        </div>
+    </div>
+
+
+    <!-- =====================
+         CONTADOR
+    ===================== -->
+    <div id="contador">
+        <div><span id="dias">0</span><br>Días</div>
+        <div><span id="horas">0</span><br>Horas</div>
+        <div><span id="minutos">0</span><br>Min</div>
+        <div><span id="segundos">0</span><br>Seg</div>
+    </div>
+
+    <!-- =====================
+         MAPA
+    ===================== -->
+    <h3>📍 Ubicación</h3>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.502110218437!2d-98.98113519999997!3d19.370533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e300440f5b37%3A0x372136a47b08e3a!2sSALON%20JARDIN%20DE%20EVENTOS%20CORAZON!5e1!3m2!1ses-419!2smx!4v1776212188656!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+</div>
+
+
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
