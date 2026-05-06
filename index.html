@@ -1,80 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inviclicks</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="./babyedsonmary.png" type="image/png">
-
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-
-        .contenedor {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        a {
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 8px;
-            color: white;
-            text-align: center;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .whatsapp {
-            background: #25D366;
-        }
-
-        .mariana {
-            background: #6c5ce7;
-        }
-
-        .baby {
-            background: #e17055;
-        }
-
-        a:hover {
-            opacity: 0.8;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel de Invitaciones</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<div class="contenedor">
-    <!-- Botón WhatsApp -->
-    <a href="https://wa.me/525614454159/?text=¡Hola!%20Les%20escribo%20por%20el%20Baby%20Shower" target="_blank" class="whatsapp">
-        WhatsApp
-    </a>
+  <div class="background-svg"></div>
 
-    <!-- Botón Mariana -->
-    <a href="./fiesta-mariana/index.html" class="mariana">
-        Mariana
-    </a>
+  <header>
+    <h1>Invitaciones Creativas</h1>
+    <p>Explora diferentes estilos para tus eventos</p>
+  </header>
 
-    <!-- Botón Baby -->
-    <a href="./BabyEdsonMary/Index.html" class="baby">
-        Baby Sabado
-    </a>
+  <section class="carousel-container">
+    <button class="prev">❮</button>
 
-    <!-- Botón Baby -->
-    <a href="./BabyEdsonMary/Index2.html" class="baby">
-        Baby Domingo
-    </a>
-</div>
+    <div class="carousel">
+      <a href="https://ejemplo1.com" target="_blank" class="slide active">
+        <img src="https://picsum.photos/id/1015/800/400" alt="Invitación boda">
+        <div class="caption">Boda elegante</div>
+      </a>
+
+      <a href="https://ejemplo2.com" target="_blank" class="slide">
+        <img src="https://picsum.photos/id/1016/800/400" alt="Invitación cumpleaños">
+        <div class="caption">Cumpleaños moderno</div>
+      </a>
+
+      <a href="https://ejemplo3.com" target="_blank" class="slide">
+        <img src="https://picsum.photos/id/1018/800/400" alt="Invitación fiesta">
+        <div class="caption">Fiesta juvenil</div>
+      </a>
+    </div>
+
+    <button class="next">❯</button>
+  </section>
+
+  <section class="features">
+    <h2>Elementos para invitaciones</h2>
+    <div class="grid">
+      <div class="card">🎨 Colores personalizados</div>
+      <div class="card">✍️ Tipografías elegantes</div>
+      <div class="card">📍 Ubicación con mapa</div>
+      <div class="card">📅 Fecha y hora</div>
+      <div class="card">🎵 Música o video</div>
+      <div class="card">📩 Confirmación RSVP</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
