@@ -1,0 +1,186 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#020b16;
+    color:white;
+    overflow-x:hidden;
+}
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.5),
+    rgba(0,0,0,.7)),
+    url("img/fondo.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    max-width:800px;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#ffe96e;
+    color:black;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+}
+
+.info{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.info h2{
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    padding:30px;
+    border-radius:15px;
+    backdrop-filter:blur(8px);
+}
+
+.galeria{
+    padding:80px 20px;
+    text-align:center;
+    position:relative;
+}
+
+.carousel{
+    max-width:900px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.slide{
+    display:none;
+}
+
+.slide.active{
+    display:block;
+}
+
+.slide img,
+.slide video{
+    width:100%;
+    border-radius:15px;
+}
+
+.prev,
+.next{
+    position:absolute;
+    top:55%;
+    transform:translateY(-50%);
+    border:none;
+    background:rgba(0,0,0,.5);
+    color:white;
+    font-size:2rem;
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+.contacto{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.whatsapp-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.wa{
+    padding:18px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-size:1.1rem;
+    transition:.3s;
+}
+
+.perla{
+    background:#25D366;
+}
+
+.charly{
+    background:#128C7E;
+}
+
+.wa:hover{
+    transform:translateY(-5px);
+}
+
+/* Luciérnagas */
+
+.firefly{
+    position:fixed;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ffe96e;
+    box-shadow:
+    0 0 10px #fff176,
+    0 0 20px #ffee58,
+    0 0 30px #ffd600;
+    animation:blink 2s infinite alternate;
+    z-index:999;
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:.1;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
