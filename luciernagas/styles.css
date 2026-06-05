@@ -77,6 +77,15 @@ body{
     backdrop-filter:blur(8px);
 }
 
+.card2{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    padding:30px;
+    border-radius:15px;
+    backdrop-filter:blur(8px);
+    color: #ffffff
+}
+
 .galeria{
     padding:80px 20px;
     text-align:center;
